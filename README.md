@@ -16,9 +16,9 @@
 
 Research and evaluation use only: see [License](#license).
 
-<a href="https://huggingface.co/PedroMarinhoDev/Nemotron-Labs-Image-ComfyUI/resolve/main/assets/nemotron_image_promo.mp4"><img src="assets/promo-poster.jpg" alt="The promo video: how Nemotron-Labs-Image writes a picture, 16×16-pixel code by code, row by row." width="100%"></a>
+https://github.com/user-attachments/assets/9f24b3d8-b856-41d5-9806-f0025c6cb181
 
-An 84-second explainer of how the model writes a picture. Click the image to play it.
+An 84-second explainer of how the model writes a picture, with sound. [Full quality (1080p, 60 fps)](https://huggingface.co/PedroMarinhoDev/Nemotron-Labs-Image-ComfyUI/resolve/main/assets/nemotron_image_promo.mp4).
 
 <p>
 <a href="assets/showcase/CORE-3_2.jpg"><img src="assets/showcase/CORE-3_2.jpg" alt="A glass perfume bottle with a brass cap on wet black slate beside a slice of blood orange, rim-lit on black." width="35.2%"></a> <a href="assets/showcase/CIN-01_2.jpg"><img src="assets/showcase/CIN-01_2.jpg" alt="A lone astronaut standing in a golden wheat field under a pale sky." width="62.4%"></a><br>
