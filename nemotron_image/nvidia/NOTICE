@@ -1,0 +1,33 @@
+Nemotron-Labs-Image-30B-A3B
+Copyright and Source Attribution Notices
+
+NVIDIA-developed visual tokenizer
+--------------------------------
+Files:
+  Nemotron-Labs-Image-Tokenizer/configuration_l24sq_vit.py
+  Nemotron-Labs-Image-Tokenizer/modeling_l24sq_vit.py
+
+Copyright (c) 2026 NVIDIA CORPORATION & AFFILIATES. All rights reserved.
+SPDX-License-Identifier: LicenseRef-NvidiaProprietary
+Use of these files is governed by the NVIDIA License in the repository root
+(LICENSE).
+
+Source files carrying Apache-2.0 notices
+---------------------------------------
+The following copyright and license notices are reproduced from the named
+source files. Their existing license and attribution headers are retained.
+The Apache License, Version 2.0 text is included in licenses/Apache-2.0.txt.
+
+configuration_nemotron_h.py
+  Copyright 2024 AI21 Labs Ltd. and the HuggingFace Inc. team. All rights reserved.
+  Copyright (c) 2025, NVIDIA CORPORATION. All rights reserved.
+  Licensed under the Apache License, Version 2.0.
+
+modeling_nemotron_h.py
+  Copyright 2024 HuggingFace Inc. team.
+  Copyright (c) 2025, NVIDIA CORPORATION. All rights reserved.
+  Licensed under the Apache License, Version 2.0.
+
+tokenization_unitron_lazy_vision.py
+  Copyright (c) 2026, NVIDIA CORPORATION. All rights reserved.
+  Licensed under the Apache License, Version 2.0.

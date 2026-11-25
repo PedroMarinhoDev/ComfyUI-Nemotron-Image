@@ -1,0 +1,435 @@
+{
+  "id": "8a26463d-90b2-4fa5-83e9-450bd12bf5a5",
+  "revision": 0,
+  "last_node_id": 6,
+  "last_link_id": 5,
+  "nodes": [
+    {
+      "id": 1,
+      "type": "MarkdownNote",
+      "pos": [
+        40,
+        40
+      ],
+      "size": [
+        520,
+        520
+      ],
+      "flags": {},
+      "order": 0,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [],
+      "title": "Read me",
+      "properties": {},
+      "widgets_values": [
+        "## Nemotron-Labs-Image-30B-A3B \u00b7 text to image\n\nNVIDIA's autoregressive image model: it writes the image as 16x16-pixel codes, row by row, then the pixel decoder turns the codes into pixels.\n\n**Files** (from [Hugging Face](https://huggingface.co/PedroMarinhoDev/Nemotron-Labs-Image-ComfyUI)):\n\n| File | Folder |\n|---|---|\n| nemotron_labs_image_30b_a3b_w4a8.safetensors (22.7 GB, fits a 24 GB GPU)<br>or `_w4a8_int8dense` (21.6 GB, the fastest), `_w6a8` (30 GB), `_int8_convrot` (36 GB), `_bf16` (65 GB) | `models/diffusion_models/nemotron-image` |\n| nemotron_labs_image_tokenizer_bf16.safetensors | `models/vae/nemotron-image` |\n\n**Settings** (the model card's): temperature 0.9, top_p 1.0, top_k 0. Sizes are multiples of 16; the recommended ones are 1024x1024, 1184x880, 1248x832 and 880x1184. Write the prompt in detail: colours, quantities, text to show, shapes, textures, where things are.\n\n**Memory:** a file that fits the GPU with ~2.5 GB to spare (W4A8 on a 24 GB card) runs there with the pack's kernels; larger ones keep the experts in system RAM with a cache on the GPU (the bf16 file needs about 80 GB of RAM).\n\n**Live preview:** the decoder is also wired into Generate, which decodes the rows written so far every 2 s.\n\nModel: [nvidia/Nemotron-Labs-Image-30B-A3B](https://huggingface.co/nvidia/Nemotron-Labs-Image-30B-A3B), NVIDIA License (non-commercial)."
+      ],
+      "widgets_values_named": {
+        "text": "## Nemotron-Labs-Image-30B-A3B \u00b7 text to image\n\nNVIDIA's autoregressive image model: it writes the image as 16x16-pixel codes, row by row, then the pixel decoder turns the codes into pixels.\n\n**Files** (from [Hugging Face](https://huggingface.co/PedroMarinhoDev/Nemotron-Labs-Image-ComfyUI)):\n\n| File | Folder |\n|---|---|\n| nemotron_labs_image_30b_a3b_w4a8.safetensors (22.7 GB, fits a 24 GB GPU)<br>or `_w4a8_int8dense` (21.6 GB, the fastest), `_w6a8` (30 GB), `_int8_convrot` (36 GB), `_bf16` (65 GB) | `models/diffusion_models/nemotron-image` |\n| nemotron_labs_image_tokenizer_bf16.safetensors | `models/vae/nemotron-image` |\n\n**Settings** (the model card's): temperature 0.9, top_p 1.0, top_k 0. Sizes are multiples of 16; the recommended ones are 1024x1024, 1184x880, 1248x832 and 880x1184. Write the prompt in detail: colours, quantities, text to show, shapes, textures, where things are.\n\n**Memory:** a file that fits the GPU with ~2.5 GB to spare (W4A8 on a 24 GB card) runs there with the pack's kernels; larger ones keep the experts in system RAM with a cache on the GPU (the bf16 file needs about 80 GB of RAM).\n\n**Live preview:** the decoder is also wired into Generate, which decodes the rows written so far every 2 s.\n\nModel: [nvidia/Nemotron-Labs-Image-30B-A3B](https://huggingface.co/nvidia/Nemotron-Labs-Image-30B-A3B), NVIDIA License (non-commercial)."
+      },
+      "color": "#432",
+      "bgcolor": "#653"
+    },
+    {
+      "id": 2,
+      "type": "NemotronImageLoader",
+      "pos": [
+        600,
+        40
+      ],
+      "size": [
+        210,
+        106
+      ],
+      "flags": {},
+      "order": 1,
+      "mode": 0,
+      "inputs": [
+        {
+          "localized_name": "model_name",
+          "name": "model_name",
+          "type": "COMBO",
+          "widget": {
+            "name": "model_name"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "experts",
+          "name": "experts",
+          "type": "COMBO",
+          "widget": {
+            "name": "experts"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "engine",
+          "name": "engine",
+          "type": "COMBO",
+          "widget": {
+            "name": "engine"
+          },
+          "link": null
+        }
+      ],
+      "outputs": [
+        {
+          "localized_name": "NEMOTRON_IMAGE",
+          "name": "NEMOTRON_IMAGE",
+          "type": "NEMOTRON_IMAGE",
+          "links": [
+            1
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "NemotronImageLoader"
+      },
+      "widgets_values": [
+        "nemotron-image/nemotron_labs_image_30b_a3b_w4a8.safetensors",
+        "auto",
+        "auto"
+      ],
+      "widgets_values_named": {
+        "model_name": "nemotron-image/nemotron_labs_image_30b_a3b_bf16.safetensors",
+        "experts": "auto",
+        "engine": "auto"
+      }
+    },
+    {
+      "id": 3,
+      "type": "NemotronImageGenerate",
+      "pos": [
+        600,
+        220
+      ],
+      "size": [
+        420,
+        420
+      ],
+      "flags": {},
+      "order": 2,
+      "mode": 0,
+      "inputs": [
+        {
+          "localized_name": "model",
+          "name": "model",
+          "type": "NEMOTRON_IMAGE",
+          "link": 1
+        },
+        {
+          "localized_name": "system_prompt",
+          "name": "system_prompt",
+          "shape": 7,
+          "type": "STRING",
+          "link": null
+        },
+        {
+          "localized_name": "vae",
+          "name": "vae",
+          "shape": 7,
+          "type": "VAE",
+          "link": 4
+        },
+        {
+          "localized_name": "prompt",
+          "name": "prompt",
+          "type": "STRING",
+          "widget": {
+            "name": "prompt"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "width",
+          "name": "width",
+          "type": "INT",
+          "widget": {
+            "name": "width"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "height",
+          "name": "height",
+          "type": "INT",
+          "widget": {
+            "name": "height"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "seed",
+          "name": "seed",
+          "type": "INT",
+          "widget": {
+            "name": "seed"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "batch_size",
+          "name": "batch_size",
+          "type": "INT",
+          "widget": {
+            "name": "batch_size"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "temperature",
+          "name": "temperature",
+          "type": "FLOAT",
+          "widget": {
+            "name": "temperature"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "top_p",
+          "name": "top_p",
+          "type": "FLOAT",
+          "widget": {
+            "name": "top_p"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "top_k",
+          "name": "top_k",
+          "type": "INT",
+          "widget": {
+            "name": "top_k"
+          },
+          "link": null
+        }
+      ],
+      "outputs": [
+        {
+          "localized_name": "LATENT",
+          "name": "LATENT",
+          "type": "LATENT",
+          "links": [
+            2
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "NemotronImageGenerate"
+      },
+      "widgets_values": [
+        "A cozy bakery storefront at golden hour. Above the door hangs a wooden sign with the words \"NEMOTRON BAKERY\" painted in large cream letters. In the window, three loaves of bread and a tray of croissants. A blue bicycle leans against the brick wall on the left; warm light spills onto the cobblestones.",
+        1024,
+        1024,
+        42,
+        "fixed",
+        1,
+        0.9,
+        1,
+        0
+      ],
+      "widgets_values_named": {
+        "prompt": "A cozy bakery storefront at golden hour. Above the door hangs a wooden sign with the words \"NEMOTRON BAKERY\" painted in large cream letters. In the window, three loaves of bread and a tray of croissants. A blue bicycle leans against the brick wall on the left; warm light spills onto the cobblestones.",
+        "width": 1024,
+        "height": 1024,
+        "seed": 42,
+        "control_after_generate": "fixed",
+        "batch_size": 1,
+        "temperature": 0.9,
+        "top_p": 1,
+        "top_k": 0
+      }
+    },
+    {
+      "id": 4,
+      "type": "NemotronImageDecoderLoader",
+      "pos": [
+        1060,
+        40
+      ],
+      "size": [
+        247.5416015625,
+        58
+      ],
+      "flags": {},
+      "order": 3,
+      "mode": 0,
+      "inputs": [
+        {
+          "localized_name": "vae_name",
+          "name": "vae_name",
+          "type": "COMBO",
+          "widget": {
+            "name": "vae_name"
+          },
+          "link": null
+        }
+      ],
+      "outputs": [
+        {
+          "localized_name": "VAE",
+          "name": "VAE",
+          "type": "VAE",
+          "links": [
+            3,
+            4
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "NemotronImageDecoderLoader"
+      },
+      "widgets_values": [
+        "nemotron-image/nemotron_labs_image_tokenizer_bf16.safetensors"
+      ],
+      "widgets_values_named": {
+        "vae_name": "nemotron-image/nemotron_labs_image_tokenizer_bf16.safetensors"
+      }
+    },
+    {
+      "id": 5,
+      "type": "VAEDecode",
+      "pos": [
+        1060,
+        220
+      ],
+      "size": [
+        140,
+        46
+      ],
+      "flags": {},
+      "order": 4,
+      "mode": 0,
+      "inputs": [
+        {
+          "localized_name": "samples",
+          "name": "samples",
+          "type": "LATENT",
+          "link": 2
+        },
+        {
+          "localized_name": "vae",
+          "name": "vae",
+          "type": "VAE",
+          "link": 3
+        }
+      ],
+      "outputs": [
+        {
+          "localized_name": "IMAGE",
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            5
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "VAEDecode"
+      }
+    },
+    {
+      "id": 6,
+      "type": "SaveImage",
+      "pos": [
+        1300,
+        220
+      ],
+      "size": [
+        520,
+        560
+      ],
+      "flags": {},
+      "order": 5,
+      "mode": 0,
+      "inputs": [
+        {
+          "localized_name": "images",
+          "name": "images",
+          "type": "IMAGE",
+          "link": 5
+        },
+        {
+          "localized_name": "filename_prefix",
+          "name": "filename_prefix",
+          "type": "STRING",
+          "widget": {
+            "name": "filename_prefix"
+          },
+          "link": null
+        }
+      ],
+      "outputs": [
+        {
+          "localized_name": "images",
+          "name": "images",
+          "type": "IMAGE",
+          "links": null
+        }
+      ],
+      "properties": {},
+      "widgets_values": [
+        "nemotron_image"
+      ],
+      "widgets_values_named": {
+        "filename_prefix": "nemotron_image"
+      }
+    }
+  ],
+  "links": [
+    [
+      1,
+      2,
+      0,
+      3,
+      0,
+      "NEMOTRON_IMAGE"
+    ],
+    [
+      2,
+      3,
+      0,
+      5,
+      0,
+      "LATENT"
+    ],
+    [
+      3,
+      4,
+      0,
+      5,
+      1,
+      "VAE"
+    ],
+    [
+      4,
+      4,
+      0,
+      3,
+      2,
+      "VAE"
+    ],
+    [
+      5,
+      5,
+      0,
+      6,
+      0,
+      "IMAGE"
+    ]
+  ],
+  "groups": [],
+  "config": {},
+  "extra": {
+    "ds": {
+      "scale": 0.4266666666666667,
+      "offset": [
+        270,
+        504.9999999999999
+      ]
+    }
+  },
+  "version": 0.4
+}

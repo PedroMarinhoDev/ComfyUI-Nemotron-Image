@@ -1,0 +1,47 @@
+ComfyUI-Nemotron-Image
+Copyright (C) 2026 PedroMarinhoDev
+Licensed under the GNU General Public License v3.0 (see LICENSE), except for the parts listed below, which keep
+their own licenses.
+
+The model weights can be used for research or evaluation only. Nemotron-Labs-Image-30B-A3B and its image tokenizer
+are under the NVIDIA License (see LICENSE-NVIDIA), which limits the weights, and every derivative work of them, to
+non-commercial use: research or evaluation only (section 3.3). The files these nodes load are such derivative
+works. The weights are not part of this repository.
+
+1. Nemotron-Labs-Image-30B-A3B (NVIDIA)
+   https://huggingface.co/nvidia/Nemotron-Labs-Image-30B-A3B
+   NVIDIA License (see LICENSE-NVIDIA). Copyright (c) 2026 NVIDIA CORPORATION & AFFILIATES. All rights reserved.
+
+   - nemotron_image/nvidia/tokenizer.json, nemotron_image/nvidia/LICENSE and nemotron_image/nvidia/NOTICE are the
+     model repository's files, unmodified.
+   - nemotron_image/prompt.py carries the model card's system prompt and user-turn template (README.md), and
+     nemotron_image/generate.py its generation protocol and sampling defaults.
+   - The files these nodes load are converted from the released weights: bf16 rounding, routed experts stacked
+     into banks, the l2-normalised codebook added to the main file, and the tokenizer's distillation head dropped.
+
+2. NVIDIA-developed visual tokenizer (Nemotron-Labs-Image-Tokenizer)
+   NVIDIA License (see LICENSE-NVIDIA), SPDX-License-Identifier: LicenseRef-NvidiaProprietary.
+   Copyright (c) 2026 NVIDIA CORPORATION & AFFILIATES. All rights reserved.
+
+   - nemotron_image/vae.py is ported from the model repository's
+     Nemotron-Labs-Image-Tokenizer/modeling_l24sq_vit.py and remains under the NVIDIA License, including
+     its non-commercial use limitation. Changes: rewritten for ComfyUI's operations, optimized attention, RoPE
+     kernel and VAE object; the nearest-code search runs in fp32.
+
+3. Source files carrying Apache-2.0 notices (NVIDIA, AI21 Labs, HuggingFace)
+   Apache License 2.0 (see LICENSE-APACHE).
+
+   - configuration_nemotron_h.py (model repository)
+       Copyright 2024 AI21 Labs Ltd. and the HuggingFace Inc. team. All rights reserved.
+       Copyright (c) 2025, NVIDIA CORPORATION. All rights reserved.
+   - modeling_nemotron_h.py (model repository)
+       Copyright 2024 HuggingFace Inc. team.
+       Copyright (c) 2025, NVIDIA CORPORATION. All rights reserved.
+   - tokenization_unitron_lazy_vision.py (model repository)
+       Copyright (c) 2026, NVIDIA CORPORATION. All rights reserved.
+   nemotron_image/model.py is ported from modeling_nemotron_h.py, and the prompt
+   tokenization in nemotron_image/prompt.py follows tokenization_unitron_lazy_vision.py. Changes: rewritten for
+   ComfyUI's operations and model patcher, with a single-token decode step that carries its own Mamba and
+   key/value state.
+
+This project is not affiliated with, sponsored or endorsed by NVIDIA.

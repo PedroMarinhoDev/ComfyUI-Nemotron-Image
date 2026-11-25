@@ -1,0 +1,21 @@
+[project]
+name = "nemotron-image-native"
+description = "NVIDIA Nemotron-Labs-Image-30B-A3B autoregressive text to image, natively in ComfyUI: the language model writes image codes, its tokenizer decodes them as a stock VAE. bf16, int8 ConvRot, W6A8 and W4A8 files. Research and evaluation use only (NVIDIA License). Not affiliated with NVIDIA."
+version = "1.0.0"
+license = { file = "LICENSE" }
+requires-python = ">=3.10"
+classifiers = ["Operating System :: OS Independent", "Environment :: GPU :: NVIDIA CUDA"]
+dependencies = []
+
+[project.urls]
+Repository = "https://github.com/PedroMarinhoDev/ComfyUI-Nemotron-Image"
+Documentation = "https://github.com/PedroMarinhoDev/ComfyUI-Nemotron-Image#readme"
+"Bug Tracker" = "https://github.com/PedroMarinhoDev/ComfyUI-Nemotron-Image/issues"
+"Model files" = "https://huggingface.co/PedroMarinhoDev/Nemotron-Labs-Image-ComfyUI"
+
+[tool.comfy]
+PublisherId = "pedromarinhodev"
+DisplayName = "Nemotron Image Native (autoregressive text to image)"
+Icon = "https://raw.githubusercontent.com/PedroMarinhoDev/ComfyUI-Nemotron-Image/main/assets/registry-icon.png"
+Banner = "https://raw.githubusercontent.com/PedroMarinhoDev/ComfyUI-Nemotron-Image/main/assets/registry-banner.png"
+requires-comfyui = ">=0.44.0"

@@ -1,0 +1,203 @@
+[
+ {
+  "label": "CIN-01_2",
+  "file": "CIN-01_2.jpg",
+  "prompt": "A film still of a lone astronaut in a wheat field.",
+  "width": 1360,
+  "height": 768,
+  "seed": 42,
+  "batch_index": 2,
+  "model_file": "nemotron_labs_image_30b_a3b_int8_convrot.safetensors"
+ },
+ {
+  "label": "CORE-3_2",
+  "file": "CORE-3_2.jpg",
+  "prompt": "Product photo of a clear glass perfume bottle with a brushed brass cap, standing on wet black slate, water droplets on the glass, a slice of blood orange beside it, dark background, hard rim light from behind, sharp reflections and caustics on the slate",
+  "width": 1024,
+  "height": 1024,
+  "seed": 42,
+  "batch_index": 2,
+  "model_file": "nemotron_labs_image_30b_a3b_int8_convrot.safetensors"
+ },
+ {
+  "label": "DRW-12_2",
+  "file": "DRW-12_2.jpg",
+  "prompt": "A stippled illustration of a human skull made entirely of tiny black dots.",
+  "width": 1024,
+  "height": 1024,
+  "seed": 42,
+  "batch_index": 2,
+  "model_file": "nemotron_labs_image_30b_a3b_int8_convrot.safetensors"
+ },
+ {
+  "label": "FSH-04_4",
+  "file": "FSH-04_4.jpg",
+  "prompt": "Magazine cover with a male model in a pastel suit against a mint wall, the masthead \"NORRSKEN\" at the top and cover lines on the left.",
+  "width": 880,
+  "height": 1184,
+  "seed": 42,
+  "batch_index": 4,
+  "model_file": "nemotron_labs_image_30b_a3b_int8_convrot.safetensors"
+ },
+ {
+  "label": "FSH-07_3",
+  "file": "FSH-07_3.jpg",
+  "prompt": "Plus-size model in a bright yellow swimsuit on a rocky Mediterranean beach, hard midday sun, confident pose, editorial colour.",
+  "width": 880,
+  "height": 1184,
+  "seed": 42,
+  "batch_index": 3,
+  "model_file": "nemotron_labs_image_30b_a3b_int8_convrot.safetensors",
+  "cropped_bottom_px": 80
+ },
+ {
+  "label": "LND-05_3",
+  "file": "LND-05_3.jpg",
+  "prompt": "Northern lights over a frozen lake in Swedish Lapland, a small red wooden cabin with a lit window on the shore, snow-covered spruce trees, stars visible, long-exposure photograph.",
+  "width": 1248,
+  "height": 832,
+  "seed": 42,
+  "batch_index": 3,
+  "model_file": "nemotron_labs_image_30b_a3b_int8_convrot.safetensors"
+ },
+ {
+  "label": "MAC-03_1",
+  "file": "MAC-03_1.jpg",
+  "prompt": "Extreme macro of a housefly's compound eye, every facet visible, focus-stacked, iridescent colours.",
+  "width": 1024,
+  "height": 1024,
+  "seed": 42,
+  "batch_index": 1,
+  "model_file": "nemotron_labs_image_30b_a3b_int8_convrot.safetensors"
+ },
+ {
+  "label": "MAC-09_4",
+  "file": "MAC-09_4.jpg",
+  "prompt": "An exploded view of a mechanical wristwatch, every gear and spring floating in order above the case, studio lighting.",
+  "width": 880,
+  "height": 1184,
+  "seed": 42,
+  "batch_index": 4,
+  "model_file": "nemotron_labs_image_30b_a3b_int8_convrot.safetensors"
+ },
+ {
+  "label": "PNT-06_4",
+  "file": "PNT-06_4.jpg",
+  "prompt": "A Byzantine-style icon of a fox saint with a golden halo, egg tempera on wood, gold-leaf background, cracked varnish.",
+  "width": 880,
+  "height": 1184,
+  "seed": 42,
+  "batch_index": 4,
+  "model_file": "nemotron_labs_image_30b_a3b_int8_convrot.safetensors"
+ },
+ {
+  "label": "PNT-14_3",
+  "file": "PNT-14_3.jpg",
+  "prompt": "Dutch Golden Age still life. A silver goblet knocked over on a white tablecloth, a half-peeled lemon with its rind spiralling over the edge of the table, oysters, and a fly on a bunch of grapes. Dark background, oil glazes, every reflection painted precisely.",
+  "width": 1184,
+  "height": 880,
+  "seed": 42,
+  "batch_index": 3,
+  "model_file": "nemotron_labs_image_30b_a3b_int8_convrot.safetensors"
+ },
+ {
+  "label": "PRD-11_4",
+  "file": "PRD-11_4.jpg",
+  "prompt": "An ad for a fictional lemonade brand called \"Sólida\". A sweating glass bottle bursts through a wall of lemon slices, with ice and water splashing around it. Bright yellow background, hard sunlight shadows, the logo clearly printed on the bottle.",
+  "width": 880,
+  "height": 1184,
+  "seed": 42,
+  "batch_index": 4,
+  "model_file": "nemotron_labs_image_30b_a3b_int8_convrot.safetensors"
+ },
+ {
+  "label": "PRD-14_1",
+  "file": "PRD-14_1.jpg",
+  "prompt": "A product range photo for a fictional outdoor brand called \"Fjällgård\". Seven items are laid out on a large slab of pale grey granite outdoors: a dark green waterproof jacket folded neatly, a pair of brown leather hiking boots with red laces, a steel water bottle with the logo engraved on it, a wool beanie, a compass, a folded paper map and a small enamel mug. Each item has its own space with even gaps between them, all facing the same way, as in a catalogue. Lichen and a few pine needles on the rock add texture. Soft overcast light with gentle shadows toward the lower right. Shot from directly above, everything in focus, true colours, the logo readable on the bottle.",
+  "width": 1248,
+  "height": 832,
+  "seed": 42,
+  "batch_index": 1,
+  "model_file": "nemotron_labs_image_30b_a3b_int8_convrot.safetensors"
+ },
+ {
+  "label": "SUR-05_1",
+  "file": "SUR-05_1.jpg",
+  "prompt": "A living room flooded with clouds up to the sofa cushions, a man calmly reading a newspaper, photograph.",
+  "width": 1184,
+  "height": 880,
+  "seed": 42,
+  "batch_index": 1,
+  "model_file": "nemotron_labs_image_30b_a3b_int8_convrot.safetensors"
+ },
+ {
+  "label": "WLD-03_2",
+  "file": "WLD-03_2.jpg",
+  "prompt": "macro, jumping spider, fuzzy, big eyes, green leaf, dew drops, studio flash",
+  "width": 1024,
+  "height": 1024,
+  "seed": 42,
+  "batch_index": 2,
+  "model_file": "nemotron_labs_image_30b_a3b_int8_convrot.safetensors"
+ },
+ {
+  "label": "X-BND-02_4",
+  "file": "X-BND-02_4.jpg",
+  "prompt": "A man in a red hat and a blue scarf next to a woman in a blue hat and a red scarf.",
+  "width": 1184,
+  "height": 880,
+  "seed": 42,
+  "batch_index": 4,
+  "model_file": "nemotron_labs_image_30b_a3b_int8_convrot.safetensors"
+ },
+ {
+  "label": "X-OBJ-11_4",
+  "file": "X-OBJ-11_4.jpg",
+  "prompt": "A vintage typewriter, top-down, a sheet of paper in it reading \"Hello world\".",
+  "width": 1024,
+  "height": 1024,
+  "seed": 42,
+  "batch_index": 4,
+  "model_file": "nemotron_labs_image_30b_a3b_int8_convrot.safetensors"
+ },
+ {
+  "label": "X-PHY-04_3",
+  "file": "X-PHY-04_3.jpg",
+  "prompt": "A chrome sphere on a checkerboard floor reflecting the room and the photographer.",
+  "width": 1024,
+  "height": 1024,
+  "seed": 42,
+  "batch_index": 3,
+  "model_file": "nemotron_labs_image_30b_a3b_int8_convrot.safetensors"
+ },
+ {
+  "label": "X-POS-25_1",
+  "file": "X-POS-25_1.jpg",
+  "prompt": "A yoga class of five people in warrior II pose, all facing the same way.",
+  "width": 1248,
+  "height": 832,
+  "seed": 42,
+  "batch_index": 1,
+  "model_file": "nemotron_labs_image_30b_a3b_int8_convrot.safetensors"
+ },
+ {
+  "label": "X-SCL-01_4",
+  "file": "X-SCL-01_4.jpg",
+  "prompt": "A tiny person at the foot of a giant redwood, looking up.",
+  "width": 768,
+  "height": 1360,
+  "seed": 42,
+  "batch_index": 4,
+  "model_file": "nemotron_labs_image_30b_a3b_int8_convrot.safetensors"
+ },
+ {
+  "label": "X-SPA-01_1",
+  "file": "X-SPA-01_1.jpg",
+  "prompt": "A red cube on top of a blue sphere, which sits on top of a green cylinder.",
+  "width": 880,
+  "height": 1184,
+  "seed": 42,
+  "batch_index": 1,
+  "model_file": "nemotron_labs_image_30b_a3b_int8_convrot.safetensors"
+ }
+]
