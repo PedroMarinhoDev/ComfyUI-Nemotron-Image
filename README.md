@@ -69,7 +69,7 @@ cd ComfyUI/custom_nodes
 git clone https://github.com/PedroMarinhoDev/ComfyUI-Nemotron-Image
 ```
 
-Or, in ComfyUI Manager, use **Install via Git URL** with `https://github.com/PedroMarinhoDev/ComfyUI-Nemotron-Image`. There is nothing to `pip install`.
+Or, in ComfyUI Manager, use **Install via Git URL** with `https://github.com/PedroMarinhoDev/ComfyUI-Nemotron-Image`. Or from the [Comfy Registry](https://registry.comfy.org/nodes/nemotron-image-native): `comfy node install nemotron-image-native`. There is nothing to `pip install`.
 
 **2. Download the weights** from [PedroMarinhoDev/Nemotron-Labs-Image-ComfyUI](https://huggingface.co/PedroMarinhoDev/Nemotron-Labs-Image-ComfyUI):
 one model file into `models/diffusion_models/nemotron-image/` and the pixel decoder into `models/vae/nemotron-image/`.
