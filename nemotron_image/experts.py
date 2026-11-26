@@ -15,6 +15,7 @@ plain path. An image depends only on (seed, its index in the batch), whatever th
   (`generate.image_generator`, the plain path's too), then `accept` takes it.
 """
 import logging
+import sys
 import time
 
 import torch
@@ -232,11 +233,14 @@ class _Rows:
                external=external)
 
     def capture(self, *args, **kwargs):
-        """One step as a CUDA graph (state advances on the card, so the same graph replays for every position)."""
+        """One step as a CUDA graph (state advances on the card, so the same graph replays for every position).
+        Windows captures in relaxed mode: another thread's memory-pool query (cuMemPoolGetAttribute) is refused
+        under global capture and invalidates the graph. Kernels are pre-compiled by the warm-up step in generate_codes."""
         stream = torch.cuda.Stream(self.device)
         stream.wait_stream(torch.cuda.current_stream(self.device))
         graph = torch.cuda.CUDAGraph()
-        with torch.cuda.stream(stream), torch.cuda.graph(graph, stream=stream):
+        mode = "relaxed" if sys.platform == "win32" else "global"
+        with torch.cuda.stream(stream), torch.cuda.graph(graph, stream=stream, capture_error_mode=mode):
             self.step(*args, **kwargs)
         torch.cuda.current_stream(self.device).wait_stream(stream)
         return graph
@@ -342,6 +346,11 @@ class FastDecoder:
                              slots * K.ExpertCache.slot_bytes(w.fmt) / 2 ** 30)
             for row0 in range(0, batch, MAX_ROWS):
                 count = min(MAX_ROWS, batch - row0)
+                if row0 == 0:
+                    warm = _Rows(w, count, schedule[None].expand(count, -1), device, cache)
+                    warm.step(temperature, seed, row0, external=external)
+                    torch.cuda.synchronize(device)
+                    del warm
                 run = _Rows(w, count, schedule[None].expand(count, -1), device, cache)
                 graph = run.capture(temperature, seed, row0, external=external)
                 generators = [image_generator(seed, row0 + r, device) for r in range(count)] if external else None
