@@ -15,6 +15,7 @@ plain path. An image depends only on (seed, its index in the batch), whatever th
   (`generate.image_generator`, the plain path's too), then `accept` takes it.
 """
 import logging
+import sys
 import time
 
 import torch
@@ -232,12 +233,14 @@ class _Rows:
                external=external)
 
     def capture(self, *args, **kwargs):
-        """One step as a CUDA graph, captured in relaxed mode: on this Windows build a pool attribute query from
-        another thread is refused under global capture. Kernels are pre-compiled by the warm-up step in generate_codes."""
+        """One step as a CUDA graph (state advances on the card, so the same graph replays for every position).
+        Windows captures in relaxed mode: another thread's memory-pool query (cuMemPoolGetAttribute) is refused
+        under global capture and invalidates the graph. Kernels are pre-compiled by the warm-up step in generate_codes."""
         stream = torch.cuda.Stream(self.device)
         stream.wait_stream(torch.cuda.current_stream(self.device))
         graph = torch.cuda.CUDAGraph()
-        with torch.cuda.stream(stream), torch.cuda.graph(graph, stream=stream, capture_error_mode="relaxed"):
+        mode = "relaxed" if sys.platform == "win32" else "global"
+        with torch.cuda.stream(stream), torch.cuda.graph(graph, stream=stream, capture_error_mode=mode):
             self.step(*args, **kwargs)
         torch.cuda.current_stream(self.device).wait_stream(stream)
         return graph
